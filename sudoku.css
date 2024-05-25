@@ -1,0 +1,118 @@
+* {
+	margin:0; padding:0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	display: flex;
+	background-image: url("static/sakura.svg");
+	background-position: top right;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.logo {
+	height: 6em;
+	width: 10em;
+	background-image: url("static/logo.svg");
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: contain;
+}
+.rules {
+	width: 33%;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 1.5rem;
+}
+.wrap {
+	display: flex;
+	padding: 2em 1em;
+	width: 67%;
+	max-width: 100%;
+	max-height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.sudoku-board {
+	padding-top: 1em;
+	min-height: 28em;
+	margin-bottom: 1em;
+	margin-left: 5em;
+}
+.sudoku-board-cell {
+	display: inline-block;
+	position: relative;
+	border: 1px solid #ddd;
+	background: rgba(255, 255, 255, 0.7);
+	max-width: 11.11111%;
+}
+
+.win-message {
+	position: absolute;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 100%;
+}
+.win-inner-box {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	margin: auto;
+	width: 30vw;
+	height: 30vh;
+	background-color: rgba(241, 241, 241,1);
+}
+.win-inner-box span {
+	font-family: 'Nunito Sans';
+}
+.play-again {
+	height: 7vh;
+	width: 12vw;
+	margin-top: 7vh;
+	font-family: 'Nunito Sans';
+	border: none;
+	cursor: pointer;
+	background-color: #f0c7e3;
+}
+
+.sudoku-board-cell input {
+	width: 2.5em;
+	height: 2.5em;
+	background: none;
+	font-size: 1.5rem;
+	text-align: center;
+	border: 0;
+	position: relative;
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+.sudoku-board-cell .highlight-val {
+	color: #00d;
+}
+
+.sudoku-board-cell .board-cell--error {
+	background: #d00;
+	color: #eee;
+}
+
+[data-board-size="9"].sudoku-board .sudoku-board-cell:nth-of-type(9n+1){
+	border-left-width: 2px;
+	border-left-color: #808080;
+}
+[data-board-size="9"].sudoku-board .sudoku-board-cell:nth-of-type(n):nth-of-type(-n+9){
+	border-top-width: 2px;
+	border-top-color: #808080;
+}
+[data-board-size="9"].sudoku-board .sudoku-board-cell:nth-of-type(3n){
+	border-right-width: 2px;
+	border-right-color: #808080;
+}
+[data-board-size="9"].sudoku-board .sudoku-board-cell:nth-of-type(n+19):nth-of-type(-n+27),
+[data-board-size="9"].sudoku-board .sudoku-board-cell:nth-of-type(n+46):nth-of-type(-n+54),
+[data-board-size="9"].sudoku-board .sudoku-board-cell:nth-of-type(n+73):nth-of-type(-n+81){
+	border-bottom-width: 2px;
+	border-bottom-color: #808080;
+}

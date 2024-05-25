@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="utf-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<link rel="stylesheet" media="all" type="text/css" href="sudoku.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+        <link rel="icon" href="static/icon.svg">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap">
+		<title>Sudoku</title>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="rules">
+			<div class="logo"></div>
+				<p> Судоку играется на игровом поле, состоящем из 9 на 9 клеток, всего 81 клетка. 
+					Внутри игрового поля находятся 9 "квадратов" (состоящих из 3 x 3 клеток). 
+					Заполните каждую строку, столбец и квадрат цифрами от 1 до 9, 
+					не повторяя никаких чисел в строке, столбце или квадрате. Удачи!
+				</p>
+			</div>
+			<div id="sudoku" class="sudoku-board">
+			</div>
+		</div>
+		<div class="win-message">
+			<div class="win-inner-box">
+				<span>Вы победили!</span>
+				<button class="play-again">Начать снова</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="sudoku.js"></script>
+		<script>
+			let sudoku = $("#sudoku").sudoku({
+			});
+		</script>
+	</body>
+</html>
